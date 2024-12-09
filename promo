@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promoções da Loja</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+        }
+        .carousel {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        .carousel img {
+            width: 100%;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Promoções Imperdíveis!</h1>
+
+    <div class="carousel">
+        <img src="URL_DA_IMAGEM1" class="active" alt="Promoção 1">
+        <img src="URL_DA_IMAGEM2" alt="Promoção 2">
+        <img src="URL_DA_IMAGEM3" alt="Promoção 3">
+        <!-- Adicione mais imagens como necessário -->
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".carousel img");
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+            slides[currentIndex].classList.remove("active");
+            currentIndex = (currentIndex + 1) % totalSlides;
+            slides[currentIndex].classList.add("active");
+        }
+
+        setInterval(showNextSlide, 3000); // Troca a imagem a cada 3 segundos
+    </script>
+
+</body>
+</html>
